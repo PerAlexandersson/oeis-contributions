@@ -1,0 +1,37 @@
+# Copy this file to proposals/<A-number or new>-<slug>.toml and fill it in.
+# Fields marked (new) are needed for kind = "new-sequence"; (data) whenever terms are given.
+
+id = "new-example-slug"          # unique; equals the file name without .toml
+kind = "new-sequence"            # new-sequence | comment | formula | example | program | link | crossref | bfile | correction
+target = "new"                   # an A-number such as "A000108", or "new"
+status = "draft"                 # draft | ready | submitted | accepted | withdrawn
+evidence = "experimental"        # proved | proof-draft | experimental | conjectural
+summary = "One line describing the contribution."
+authors = ["Name Surname"]       # as it should appear in the OEIS entry or edit note
+
+# Optional bookkeeping.
+# submitted = "2026-01-31"
+# a_number = "A123456"            # assigned or edited entry once accepted
+# notes = "Free-form notes for reviewers (not submitted)."
+
+[oeis_search]                    # (new) what was searched and when
+date = "2026-01-31"
+queries = ["1, 1, 1, 7, 1, 53, 3"]
+result = "no match"
+
+[data]                           # (data)
+generator = "generators/example.py"   # prints the terms, comma separated, on one line
+args = ["--max-n", "8"]
+offset = 0                       # %O first index
+layout = "tabf"                  # list | tabl | tabf
+terms = "1, 1, 1, 1, 1, 7"       # flattened terms as in %S/%T/%U
+
+[oeis]                           # text blocks to paste, one entry per OEIS line
+name = "Triangle read by rows: ..."
+comments = ["..."]
+formulas = []
+example = ["Triangle begins:", "  1;", "  1;"]
+programs = []
+links = []
+crossrefs = []
+keywords = ["nonn", "tabf"]

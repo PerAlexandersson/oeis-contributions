@@ -1,0 +1,16 @@
+id = "A396311-A396313-arxiv-author-order"
+kind = "correction"
+target = "A396311"
+also_targets = ["A396312", "A396313"]
+status = "ready"
+evidence = "proved"
+summary = "Correct the author order of the arXiv reference in A396311, A396312 and A396313."
+authors = ["Per Alexandersson"]
+notes = "The live entries cite the paper as 'Per Alexandersson and John Ahlberg'; arXiv:2605.03473 lists John Ahlberg, Per Alexandersson."
+
+[correction]
+field = "LINKS (and REFERENCES, if present)"
+old = "Per Alexandersson and John Ahlberg, Polynomials from tilings of rectangles, arXiv:2605.03473 [math.CO], 2026."
+new_link = "John Ahlberg and Per Alexandersson, <a href=\"https://arxiv.org/abs/2605.03473\">Polynomials from tilings of rectangles</a>, arXiv:2605.03473 [math.CO], 2026."
+new_reference = "John Ahlberg and Per Alexandersson, Polynomials from tilings of rectangles, arXiv:2605.03473 [math.CO], 2026."
+editor_note = "Corrected author order of the arXiv reference."

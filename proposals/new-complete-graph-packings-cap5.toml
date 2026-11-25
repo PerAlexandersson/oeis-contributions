@@ -1,0 +1,44 @@
+id = "new-complete-graph-packings-cap5"
+kind = "new-sequence"
+target = "new"
+status = "draft"
+evidence = "experimental"
+summary = "Triangle of packings of connected edge sets with at most 5 edges in K_n, counted by number of pieces; rows conjecturally real-rooted."
+authors = ["Per Alexandersson"]
+notes = "Open real-rootedness problem in RealRooted issue #2646 (public). Status draft until reviewed for submission."
+
+[oeis_search]
+date = "2026-11-25"
+queries = ["1, 59, 3, 1, 582, 55, 1, 4028, 1000, 15", "row sums: 1, 1, 2, 8, 63, 638, 5044, 36758, 358835"]
+result = "no match"
+
+[data]
+generator = "generators/complete_graph_packings.py"
+args = ["--cap", "5", "--max-n", "11"]
+offset = 0
+layout = "tabf"
+terms = "1, 1, 1, 1, 1, 7, 1, 59, 3, 1, 582, 55, 1, 4028, 1000, 15, 1, 17815, 18417, 525, 1, 58562, 284137, 16030, 105, 1, 157620, 4024839, 462196, 5985, 1, 367899, 54716949, 11674075, 272475, 945, 1, 771991, 629529813, 275671165, 11203885, 79695"
+
+[oeis]
+name = "Triangle read by rows: T(n,k) is the number of sets of k vertex-disjoint connected edge sets, each with at most 5 edges, in the complete graph K_n, for n >= 0 and 0 <= k <= floor(n/2)."
+comments = [
+  "Distinct edge sets on the same vertex set count separately, and vertices may be left unused. The empty set gives T(n,0) = 1, and T(2m,m) = (2m)!/(2^m m!) counts perfect matchings.",
+  "Conjecture: for n >= 2 the row polynomial Sum_k T(n,k) x^k has floor(n/2) distinct negative real zeros, and the zeros of consecutive rows strictly interlace. Verified with exact arithmetic for n <= 120.",
+]
+formulas = [
+  "Row polynomials satisfy C(0,x) = 1 and C(n,x) = C(n-1,x) + x * Sum_{r=2..min(n,6)} w(r) * binomial(n-1,r-1) * C(n-r,x), where (w(2), w(3), ...) = (1, 4, 37, 347, 1296) counts connected spanning edge sets with at most 5 edges on r labeled vertices.",
+]
+example = [
+  "Triangle begins:",
+"  1;",
+"  1;",
+"  1, 1;",
+"  1, 7;",
+"  1, 59, 3;",
+"  1, 582, 55;",
+"  1, 4028, 1000, 15;",
+]
+programs = ["(Python) See generators/complete_graph_packings.py in https://github.com/PerAlexandersson/oeis-contributions"]
+links = ["Per Alexandersson, <a href=\"https://github.com/PerAlexandersson/RealRooted/issues/2646\">Strict interlacing of clustering polynomials on complete graphs, balanced complete bipartite graphs, and two-row ladders</a>, RealRooted issue 2646 (2026)."]
+crossrefs = []
+keywords = ["nonn", "tabf"]
