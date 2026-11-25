@@ -20,7 +20,8 @@ jobs:
       - name: Validate proposals and regenerate data
         run: python3 scripts/validate.py --index --bfiles bfiles
       - name: Index is up to date
-        run: git diff --exit-code PROPOSALS.md || { echo "Run: python3 scripts/validate.py --index"; exit 1; }
+        run: |
+          git diff --exit-code PROPOSALS.md || { echo "Regenerate the index with python3 scripts/validate.py --index"; exit 1; }
       - uses: actions/upload-artifact@v4
         with:
           name: bfiles
